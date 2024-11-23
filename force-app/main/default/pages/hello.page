@@ -1,0 +1,27 @@
+<apex:page >
+<apex:form >
+<apex:pageBlock title="Block" >
+<apex:pagemessage summary="sdfsdfsdfsd" severity="info"></apex:pagemessage>
+
+<apex:pageBlockSection title="S1" >
+<apex:pageBlockSectionItem >A</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >A</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >A</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >A</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="S2">
+<apex:pageBlockSectionItem >A</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >A</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >A</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >A</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+
+
+</apex:form>
+
+
+</apex:page>

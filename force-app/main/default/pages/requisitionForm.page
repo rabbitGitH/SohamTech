@@ -1,0 +1,27 @@
+<apex:page standardController="Product__c" recordSetVar="JD" tabstyle="Product__c">
+    <apex:form id="changeStatusForm">
+        <apex:pageBlock >
+        
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!save}"/>
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockTable value="{!JD}" var="j">
+        
+             
+            <apex:column value="{!j.To__c}"/>
+          
+            <apex:column value="{!j.from__c}"/>
+            
+            <apex:column value="{!j.Department__c}"/>
+  
+            <apex:column value="{!j.Subject__c}"/>
+            
+           
+            
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+        <apex:relatedList list="Job_Requisition_Line_Item__r" />
+
+</apex:page>

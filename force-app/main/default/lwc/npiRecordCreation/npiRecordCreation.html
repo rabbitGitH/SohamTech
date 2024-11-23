@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Create NPI Record">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Enter NPI" value={npi} onchange={handleNpiChange}></lightning-input>
+            <br/><br/>
+            <lightning-button variant="brand" label="Submit" onclick={createNpiRecord}></lightning-button>
+            <br/><br/>
+            <template if:true={showSuccessMessage}>
+                <div class="slds-notify slds-notify_success">
+                    <span class="slds-assistive-text">Success</span>
+                    Record created successfully!
+                </div>
+            </template>
+            <template if:true={showErrorMessage}>
+                <div class="slds-notify slds-notify_alert">
+                    <span class="slds-assistive-text">Error</span>
+                    {errorMessage}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

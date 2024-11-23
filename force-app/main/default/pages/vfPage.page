@@ -1,0 +1,7 @@
+<apex:page controller="MapPractice">
+<apex:pageBlock >
+  <h1>Congratulations</h1>
+{!mapping['1']}
+{!mappingg['1']}
+</apex:pageBlock>
+</apex:page>

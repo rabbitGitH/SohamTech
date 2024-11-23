@@ -1,0 +1,33 @@
+<template>
+    <div>
+      <lightning-input label="Enter NPI Number" onchange={handleInputChange}></lightning-input>
+      <lightning-button variant="brand" label="Search" onclick={handleSearchClick}></lightning-button>
+      <template if:true={isResultAvailable}>
+        <div>
+          <p><strong><u>Basic Details :</u></strong></p>
+
+          <p>First Name      : {firstName}</p>
+          <p>Last Name       : {lastName}</p>
+          <p>gender          : {gender}</p>
+          <p>credential      : {credential}</p>
+          <p>desc            : {desc}</p>
+
+          <p><strong><u>Address :</u></strong></p>
+
+          <p>country_code    : {country_code}</p>
+          <p>country_name    : {country_name}</p>         
+          <p>address_purpose : {address_purpose}</p>
+          <p>address_type    : {address_type}</p>
+          <p>address_1       : {address_1}</p>
+          <p>city            : {city}</p>
+          <p>state           : {state}</p>
+          
+          
+          
+          
+          
+
+        </div>
+      </template>
+    </div>
+  </template>

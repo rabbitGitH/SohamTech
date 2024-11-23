@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="NPI Lookup">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <lightning-input label="NPI Number" value={npiNumber} onchange={handleNpiNumberChange}></lightning-input>
+            </div>
+            <div class="slds-col">
+                <lightning-button label="Lookup NPI" onclick={handleNpiLookup}></lightning-button>
+            </div>
+        </div>
+        <div class="slds-m-top_medium slds-grid slds-gutters">
+            <div class="slds-col">
+                <lightning-card title="Lead Information">
+                    <lightning-input label="First Name" value={leadFirstName}></lightning-input>
+                    <lightning-input label="Last Name" value={leadLastName}></lightning-input>
+                </lightning-card>
+            </div>
+            <div class="slds-col">
+                <lightning-card title="NPI Information">
+                    <lightning-input label="First Name" value={npiFirstName}></lightning-input>
+                    <lightning-input label="Last Name" value={npiLastName}></lightning-input>
+                </lightning-card>
+            </div>
+        </div>
+        <div class="slds-m-top_medium">
+            <lightning-button label="Create NPI Record" onclick={handleNpiRecordCreation}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

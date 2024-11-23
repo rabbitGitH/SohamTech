@@ -1,0 +1,28 @@
+<apex:page controller="DataTableEditRemoveController">
+
+    <apex:form id="form">
+    
+        <apex:pageBlock title="Accounts">
+        
+            <apex:pageMessages ></apex:pageMessages>
+            
+            <apex:pageBlockTable value="{!accs}" var="row">
+                <apex:column >
+                    <apex:outputLink title="" value="/{!row.id}/e? retURL=/apex/{!$CurrentPage.Name}" style="font-weight:bold">   Edit
+                      </apex:outputLink>&nbsp;|&nbsp;
+                      
+                    <apex:commandLink reRender="form" value="Delete">
+                        
+                    </apex:commandLink>
+                   
+                </apex:column>
+                <apex:column value="{!row.Name}"/>
+                <apex:column value="{!row.BillingStreet}"/>
+                <apex:column value="{!row.BillingCity}"/>
+                <apex:column value="{!row.BillingPostalCode}"/>
+                <apex:column value="{!row.BillingCountry}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,22 @@
+<apex:page >
+  
+  <apex:form >
+  <apex:pageBlock >
+  <apex:pagemessage summary="All information neccessary" severity="warning" strength="0" />
+  
+  Enter the username : <apex:inputText /> <br/> <br/>
+  Enter the password : <apex:inputsecret /> <br/> <br/>
+
+  Address : <apex:inputTextarea /><br/> <br/>
+  Select the checkbox if you are active member on facebook : <apex:inputCheckbox /><br/> <br/>
+  <apex:pageBlockButtons >
+  <apex:commandButton value="Save"/>
+  <apex:commandButton value="Cancel"/>
+  </apex:pageBlockButtons>
+<apex:outputLink value="http://www.salesforce.com">Salesforce</apex:outputLink>
+  
+ 
+  </apex:pageBlock>
+  </apex:form>
+  
+</apex:page>

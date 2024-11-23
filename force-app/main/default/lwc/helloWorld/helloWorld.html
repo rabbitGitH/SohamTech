@@ -1,0 +1,93 @@
+<template>
+    <div>
+        <lightning-card title="Two-way data binding">
+            <div>This is {binding}</div>
+            <input type="text" onkeyup={changeHandler}/>
+            <div>This is {binding2}</div>
+        </lightning-card>
+
+        <lightning-card title="@track properties">
+            <div>Name: {obj.Name}</div>
+            <div>Class: {obj.Class}</div>
+            <input type="text" onkeyup={designationUpdater}/>
+            <div>Designation: {obj.Designation}</div>
+        </lightning-card>
+
+        <lightning-card title="Without using @track properties">
+            <div>Name: {obj1.Name}</div>
+            <input type="text" onkeyup={updateClass}/>
+            <div>Class: {obj1.Class}</div>
+        </lightning-card>
+
+        <lightning-card title="Getter Demo">
+            <div>Multiplication of {no1} and {no2} is {multiplication}</div>
+            <div>First User of the Userlist is {displayFirstUser}</div>
+        </lightning-card>
+
+        <lightning-card title="Conditional Rendering">
+            <div class="slds-var-m-around_medium">
+                <lightning-button variant="brand"
+                                  label="Show Data"
+                                  title="Show Data"
+                                  onclick={handleClick}
+                                  class="slds-var-m-left_x-small">
+                </lightning-button>
+                <template if:true={isVisible}>
+                    <div>NOW IT'S TRUE</div>
+                </template>
+                <template if:false={isVisible}>
+                    <div>NOW IT'S FALSE</div>
+                </template>
+            </div>
+        </lightning-card>
+
+        <lightning-card title="Toggle Text Example">
+            <div class="slds-p-around_medium">
+                <p>{displayText}</p>
+                <lightning-button label="Toggle" onclick={toggleText}></lightning-button>
+            </div>
+        </lightning-card>
+ 
+         
+        <lightning-input type="text" label="Enter Hi to see the output" onkeyup={onKeyHandler}>
+
+        </lightning-input>
+
+        <template if:true={isHiPresent}>
+          <div>Hurray!! you have provided correct input.</div>
+        </template>
+
+        <lightning-card title="HTML For Each Loop">
+          <div class="slds-var-m-around_medium">
+             <template for:each={carArray} for:item="car">
+
+            <ul class="slds-has-dividers_around-space" key={car}>
+              <li class="slds-item">{car}</li>
+            </ul>
+
+          </template> 
+          </div>
+      </lightning-card>
+
+      <lightning-card title="Itrator Loop">
+        <div class="slds-var-m-around_medium">
+           <template iterator:ceo={ceoList}>
+            <div key={ceo.value.id}>
+          <ul class="slds-has-dividers_around-space">
+            <li class="slds-item">
+              <strong>{ceo.value.Name}</strong>
+                 
+              
+           </li>
+           </ul>
+</div>
+        </template> 
+        </div>
+    </lightning-card>
+
+
+     
+
+
+    </div>
+</template>

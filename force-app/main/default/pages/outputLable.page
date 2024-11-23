@@ -1,0 +1,20 @@
+<apex:page >
+ 
+<apex:form >
+<apex:pageBlock >
+ <apex:outputLabel value="Enter the name     :" for="name"></apex:outputLabel>
+ <apex:inputtext id="name" /><br/><br/>
+ 
+ <apex:outputLabel value="Enter the password :" for="password"></apex:outputLabel>
+ <apex:inputsecret id="password"/><br/><br/>
+ 
+ <apex:outputLink value="http://Salesforce.com/">Salesforce</apex:outputLink>
+
+ 
+ <apex:pageBlockButtons ><apex:commandButton value="Save"/><apex:commandButton value="Cancel"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+
+</apex:form>
+ 
+</apex:page>

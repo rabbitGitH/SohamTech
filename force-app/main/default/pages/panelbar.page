@@ -1,0 +1,16 @@
+<apex:page >
+<apex:form >
+<apex:pageBlock >
+ 
+ <apex:panelBar >
+ 
+ <apex:panelBarItem >Item 1</apex:panelBarItem>
+ <apex:panelBarItem >Item 2</apex:panelBarItem>
+ <apex:panelBarItem >Item 3</apex:panelBarItem>
+
+ 
+ </apex:panelBar>
+ 
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

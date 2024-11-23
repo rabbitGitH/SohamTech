@@ -1,0 +1,57 @@
+<apex:page controller="ContactRegistrationController">
+    <apex:form style="margin: 20px;">
+        <fieldset style="border: 1px solid #ccc; padding: 10px;">
+            <legend style="background-color: #f0f0f0; padding: 5px;">Contact Registration Form</legend>
+            <apex:pageMessages />
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="language">Language:</label>
+                    </td>
+                    <td>
+                        <apex:selectList id="language" value="{!selectedLanguage}" size="1">
+                            <apex:selectOption itemValue="" itemLabel="--None--"/>
+                            <apex:selectOption itemValue="English" itemLabel="English"/>
+                            <apex:selectOption itemValue="French" itemLabel="French"/>
+                            <apex:selectOption itemValue="Spanish" itemLabel="Spanish"/>
+                            <apex:actionSupport event="onchange" rerender="contentSection"/>
+                        </apex:selectList>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <apex:outputPanel id="contentSection">
+                            <apex:outputPanel rendered="{!selectedLanguage == 'English'}">                            
+                                <legend style="background-color: #f0f0f0; padding: 5px;">English</legend>
+                                <div>First Name</div>
+                                <apex:inputText value="{!contact.FirstName}" label="First Name"/><br/>
+                                <div>Last Name</div>
+                                <apex:inputText value="{!contact.LastName}" label="Last Name"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!selectedLanguage == 'French'}">
+                                <legend style="background-color: #f0f0f0; padding: 5px;">French</legend>
+                                <div>Prénom</div>
+                                <apex:inputText value="{!contact.FirstName}" label="Prénom"/><br/>
+                                <div>Nom</div>
+                                <apex:inputText value="{!contact.LastName}" label="Nom"/>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!selectedLanguage == 'Spanish'}">
+                                <legend style="background-color: #f0f0f0; padding: 5px;">Spanish</legend>
+                                <div>Nombre</div>
+                                <apex:inputText value="{!contact.FirstName}" label="Nombre"/><br/>
+                                <div>Apellido</div>
+                                <apex:inputText value="{!contact.LastName}" label="Apellido"/>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <apex:commandButton value="Submit" action="{!saveContact}" style="margin-top: 10px;"/>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </apex:form>
+</apex:page>

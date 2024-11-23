@@ -1,0 +1,13 @@
+<template>
+  <lightning-card title="NPI Lookup">
+    <div class="slds-m-around_medium">
+      <lightning-input type="text" label="NPI Number" value={npiNumber} onchange={handleNpiNumberChange}></lightning-input>
+      <lightning-button label="Lookup" variant="brand" onclick={handleLookup}></lightning-button>
+      <template if:true={npiData}>
+        <div class="slds-m-top_medium">
+          <p>{npiData.basic.first_name} {npiData.basic.last_name}</p>
+        </div>
+      </template>
+    </div>
+  </lightning-card>
+</template>

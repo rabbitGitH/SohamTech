@@ -1,0 +1,9 @@
+<apex:page standardController="Account">       
+
+    <apex:relatedList list="CombinedAttachments">
+    <apex:form >
+        <apex:facet name="header">&nbsp;</apex:facet>    <!--This line of code removing the attachment header-->   
+       </apex:form>
+    </apex:relatedList>
+   
+</apex:page>

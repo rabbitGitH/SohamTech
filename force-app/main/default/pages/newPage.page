@@ -1,0 +1,15 @@
+<apex:page standardController="Lead" extensions="NPIExtension">
+    <apex:form >
+        <apex:pageBlock title="NPI Record">
+            <apex:pageBlockSection columns="2">
+                <apex:outputField value="{!Lead.Name}"/>
+                <apex:outputField value="{!Lead.NPI__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="NPI Information" columns="1" rendered="{!showNPI}">
+                <apex:outputField value="{!npiRecord.Name}"/>
+                <apex:outputField value="{!npiRecord.NPI_No__c }"/>
+                <!-- Add more fields here -->
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

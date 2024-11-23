@@ -1,0 +1,198 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+<apex:form >
+
+<apex:outputLabel value="Enter the Name" for="nname"></apex:outputLabel>
+<apex:inputtext id="nname"/> <br/><br/>
+<apex:outputLabel value="Enter the Mob No." for="mob"></apex:outputLabel>
+<apex:inputtext id="mob"/><br/><br/>
+
+<apex:outputLink value="https://www.google.com">Google</apex:outputLink><br/><br/>
+
+<h1>Please fill the below details : </h1> <br/> <br/>
+Enter Name:<apex:inputText id="name"/><br/> <br/>
+Enter Age:<apex:inputtext id="age"/><br/> <br/>
+Set UserName:<apex:inputText id="setname"/><br/> <br/>
+Enter a Password:<apex:inputSecret id="password"/><br/> <br/>
+Cover Letter:<apex:inputTextarea id="cover"/><br/> <br/>
+Are you currently empolyed?:<apex:inputCheckbox id="emp"/>    <br/> <br/>
+<apex:commandButton value="Save"/> <br/> <br/> <br/> <br/>
+
+
+<apex:panelGrid columns="2" id="grid" border="2">
+<apex:outputText value="first" id="thefirst"></apex:outputText>
+<apex:outputText value="second" id="thesecond"></apex:outputText>
+<apex:outputText value="third" id="thethird"></apex:outputText>
+<apex:outputText value="fourth" id="thefourth"></apex:outputText>
+<apex:panelGroup >
+<apex:outputText value="first" id="th"></apex:outputText>
+<apex:outputText value="second" id="tht"></apex:outputText>
+<apex:outputText value="third" id="thtt"></apex:outputText>
+<apex:outputText value="fourth" id="thet"></apex:outputText>
+
+</apex:panelGroup>
+</apex:panelGrid>
+
+
+
+<br/> <br/> <br/> <br/>
+
+<apex:pageblock title="Viewing Accounts">
+<apex:pageBlockSection >
+<apex:dataList value="{!accounts}" var="a">
+{!a.name}
+</apex:dataList>
+</apex:pageBlockSection>
+<apex:panelGrid columns="2">
+<apex:commandLink action="{!previous}">Prev</apex:commandLink>
+<apex:commandLink action="{!Next}">Next</apex:commandLink>
+</apex:panelGrid>
+</apex:pageblock>
+
+
+<br/> <br/> <br/> <br/>
+
+
+<apex:pageBlock >
+
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!Save}"/>
+</apex:pageBlockButtons>
+
+<apex:pageBlockTable value="{!accounts}" var="ac">
+
+<apex:column value="{!ac.name}"/>
+
+
+<apex:column headerValue="AccNo">
+<apex:inputfield value="{!ac.accountNumber}"/>
+</apex:column>
+
+<apex:column headerValue="Name can edit">
+<apex:inputField value="{!ac.name}"/>
+</apex:column>
+
+</apex:pageBlockTable>
+</apex:pageBlock>
+
+<br/> <br/> <br/> <br/>
+
+<apex:pageBlock title="Account Block" mode="edit">
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!save}"/>
+</apex:pageBlockButtons>
+
+<apex:pageBlockSection title="Account Section" columns="1">
+<apex:inputfield value="{!account.name}"/>
+<apex:inputfield value="{!account.type}"/>
+<apex:inputfield value="{!account.accountNumber}"/>
+<apex:inputfield value="{!account.site}"/>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+
+<br/> <br/> <br/> <br/>
+
+<apex:tabPanel >
+<apex:tab label="Home" name="home1" id="tab1">FirstCry India Shopping Parenting FirstCry India Shopping Parenting iOS</apex:tab>
+<apex:tab label="Student" name="home31" id="tab31">FirstCry India Shopping Parenting FirstCry India Shopping Parenting iOS</apex:tab>
+</apex:tabPanel>
+
+
+<br/> <br/> <br/> <br/>
+
+<apex:pageBlock title="Account Deletion Block" mode="">
+<apex:pageBlockButtons >
+<apex:commandButton value="Delete" action="{!delete}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection title="Account section">
+<apex:outputText value="{!account.name}"/>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+<br/> <br/> <br/> <br/>
+
+<apex:pageBlock title="List Of Account">
+<apex:pageBlockTable value="{!accounts}" var="a" >
+<apex:column value="{!a.name}"/>
+<apex:column value="{!a.accountNumber}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+
+
+<br/> <br/> <br/> <br/>
+
+
+<apex:selectList value="{!filterid}" size="1">
+<apex:selectOptions value="{!listviewoptions}"></apex:selectOptions>
+</apex:selectlist>
+<apex:commandButton value="Go!" action="{!list}"/>
+<br/> <br/> <br/> <br/>
+
+
+<apex:toolbar id="theToolbar">
+<apex:outputText value="sample toolbar"></apex:outputText>
+<apex:toolbarGroup itemSeparator="line" id="tool">
+<apex:outputLink value="https://www.google.com/">Google</apex:outputLink>
+<apex:outputLink value="https://login.salesforce.com/">Salesforce</apex:outputLink>
+</apex:toolbarGroup>
+
+<apex:toolbarGroup itemSeparator="line" location="right" id="too">
+
+<apex:inputtext id="inptxt">Enter text:</apex:inputtext>
+<apex:commandButton value="Save" id="cmdlink"/>
+
+</apex:toolbarGroup>
+
+</apex:toolbar>
+
+
+<br/> <br/> <br/> <br/>
+
+<apex:panelBar >
+
+<apex:panelBarItem label="BAR ONE"   ONenter="ALERT('ENTER');"  ONleave="ALERT('LEAVE');">Item One</apex:panelBarItem>
+<apex:panelBarItem label="BAR TWO"   ONenter="ALERT('ENTER');"  ONleave="ALERT('LEAVE');">Item Two</apex:panelBarItem>
+<apex:panelBarItem label="BAR THREE" ONenter="ALERT('ENTER');"  ONleave="ALERT('LEAVE');">Item Three</apex:panelBarItem>
+<apex:panelBarItem label="BAR FOUR"  ONenter="ALERT('ENTER');"  ONleave="ALERT('LEAVE');">Item four</apex:panelBarItem>
+</apex:panelBar>
+
+ <br/> <br/> <br/> <br/>
+<apex:pageBlock title="Sample" >
+<apex:pagemessage summary="Something Wrong" strength="1" severity="confirm"></apex:pagemessage>
+
+<apex:pageBlockSection title="section 1">
+<apex:pageBlockSectionItem >Item 1</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Item 2</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Item 3</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Item 4</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="section 2">
+<apex:pageBlockSectionItem >Item 5</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Item 6</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Item 7</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Item 8</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:pageBlock title="Sample" >
+<apex:pageBlockSection title="section 1">
+<apex:pageBlockSectionItem >Item 1</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Item 2</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Item 3</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Item 4</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save"/>
+</apex:pageBlockButtons>
+
+</apex:pageBlock>
+<h1>Congratulations</h1>
+  This is your new Page: helloword
+  <!-- End Default Content REMOVE THIS -->
+
+</apex:form>
+</apex:page>
